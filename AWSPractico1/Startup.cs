@@ -25,7 +25,8 @@ namespace AWSPractico1
 
         public void ConfigureServices(IServiceCollection services)
         {
-            String cadena = this.Configuration.GetConnectionString("mariadb");
+            //String cadena = this.Configuration.GetConnectionString("mariadb");
+            String cadena = this.Configuration.GetConnectionString("EC2publica");
             services.AddDbContext<CochesContext>(options => options.UseMySql(cadena, ServerVersion.AutoDetect(cadena)));
             services.AddTransient<RepositoryCoches>();
             services.AddControllersWithViews();
