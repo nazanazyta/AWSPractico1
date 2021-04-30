@@ -1,0 +1,28 @@
+﻿@model List<Coche>
+
+<h1>COCHES</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Coche c in Model)
+        {
+            <tr>
+                <td>@c.Marca</td>
+                <td>@c.Modelo</td>
+                <td>
+                    <a asp-controller="Home"
+                       asp-action="Details"
+                       asp-route-id="@c.IdCoche"
+                       class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
